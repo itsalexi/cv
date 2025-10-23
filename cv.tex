@@ -26,7 +26,7 @@
 %----------------------------------------------------------------------------------------
 
 % article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper, 10pt]{article}
 
 %----------------------------------------------------------------------------------------
 %	FONT
@@ -54,7 +54,15 @@
 \RequirePackage{color}
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.9]{geometry}
+\usepackage[
+    ignoreheadfoot, % set margins without considering header and footer
+    top=2 cm, % seperation between body and page edge from the top
+    bottom=2 cm, % seperation between body and page edge from the bottom
+    left=2 cm, % seperation between body and page edge from the left
+    right=2 cm, % seperation between body and page edge from the right
+    footskip=1.0 cm, % seperation between body and footer
+    % showframe % for debugging 
+]{geometry} % for adjusting page geometry
 
 %tabularx environment
 \usepackage{tabularx}
@@ -79,7 +87,7 @@
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{10pt}{10pt}
+\titlespacing{\section}{0pt}{3pt}{3pt}
 
 %for publications
 \usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
@@ -96,6 +104,16 @@
 
 %debug page outer frames
 %\usepackage{showframe}
+
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.02 cm,
+        parsep=0.02 cm,
+        partopsep=0.02 cm
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights
 
 
 % job listing environments
@@ -142,76 +160,121 @@
 % \end{tabularx}
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Your Name} \\[7.5pt]
-\href{https://github.com/username}{\raisebox{-0.05\height}\faGithub\ username} \ $|$ \ 
-\href{https://linkedin.com/in/username}{\raisebox{-0.05\height}\faLinkedin\ username} \ $|$ \ 
-\href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
-\href{mailto:email@mysite.com}{\raisebox{-0.05\height}\faEnvelope \ email@mysite.com} \ $|$ \ 
-\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +00.00.000.000} \\
-\end{tabularx}
-
-%----------------------------------------------------------------------------------------
-% EXPERIENCE SECTIONS
-%----------------------------------------------------------------------------------------
-
-%Interests/ Keywords/ Summary
-\section{Summary}
-This CV can also be automatically compiled and published using GitHub Actions. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
-
-%Experience
-\section{Work Experience}
-
-\begin{jobshort}{Designation}{Jan 2021 - present}
-long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width
-\end{jobshort}
-
-
-\begin{joblong}{Designation}{Mar 2019 - Jan 2021}
-\item long long line of blah blah that will wrap when the table fills the column width
-\item again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah
-\end{joblong}
-  
-%Projects
-\section{Projects}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
+\textbf{\fontsize{18 pt}{18 pt}\selectfont Alexi Roth Luis A. Cañamo} \\
+\vspace{0.05 cm}
+\href{https://github.com/itsalexi}{\color{black}\raisebox{-0.05\height}\faGithub\ itsalexi}\ \ $|$ \ 
+\href{https://linkedin.com/in/alexicanamo}{\color{black}\raisebox{-0.05\height}\faLinkedin\ alexicanamo} \ $|$ \ 
+\href{https://alexi.life}{\color{black}\raisebox{-0.05\height}\faGlobe\ alexi.life} \ $|$ \ 
+\href{mailto:alexicanamo@gmail.com}{\color{black}\raisebox{-0.05\height}\faEnvelope\ alexicanamo@gmail.com} \ $|$ \ 
+\href{tel:+639163138897}{\color{black}\raisebox{-0.05\height}\faMobile\ 0916 313 8897} \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 \section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2030 - present & PhD (Subject) at \textbf{University} \hfill \normalsize (GPA: 4.0/4.0) \\
 
-2023 - 2027 & Bachelor's Degree at \textbf{College} \hfill (GPA: 4.0/4.0) \\ 
-
-2022 & Class 12th Some Board \hfill  (Grades) \\
-
-2021 & Class 10th Some Board \hfill  (Grades) \\
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Ateneo de Manila University} & \hfill Aug 2024 – May 2028 \\ [1pt]
+\multicolumn{2}{@{}X@{}}{
+    \textit{Bachelor of Science in Computer Science}
+    \begin{highlights}
+        \item Quezon City, Metro Manila
+    \end{highlights}
+}
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
-%	PUBLICATIONS
+%	EXPERIENCE
 %----------------------------------------------------------------------------------------
-\section{Publications}
-\begin{refsection}[citations.bib]
-\nocite{*}
-\printbibliography[heading=none]
-\end{refsection}
+\section{Professional Experience}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Software Engineer Intern} & \hfill Sep 2025 – Present \\ [1pt]
+\multicolumn{2}{@{}X@{}}{
+    \textit{NextPay (YC W21)}
+    \begin{highlights}
+        \item Built a complete marketing landing page end to end, from responsive UI design to production deployment
+        \item Collaborating with a cross-functional team of 5+ engineers on a customer-facing dashboard to be deployed to active clients
+        \item Developing scalable front-end components using React, Next.js, and TypeScript within an agile workflow
+    \end{highlights}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Founder} & \hfill May 2025 – Present \\ [1pt]
+\multicolumn{2}{@{}X@{}}{
+    \textit{One Big Match}
+    \begin{highlights}
+        \item Leading product vision, backend development, and go-to-market planning for a web app that enhances org events and mixers
+        \item Managing a team of 3 student designers and developers to deliver product features and UX improvements
+        \item Hosted multiple pilot events and onboarded 80+ users, gathering feedback for launch readiness
+    \end{highlights}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{AVP for IT Skills \& Development} & \hfill Jul 2025 – Present \\ [1pt]
+\multicolumn{2}{@{}X@{}}{
+    \textit{Ateneo Management Information Systems Association (MISA)}
+    \begin{highlights}
+        \item Organizing technical workshops and training sessions to upskill 50+ organization members
+        \item Overseeing internal development projects focused on student productivity and automation tools
+        \item Mentoring officers and developers to maintain quality and project consistency
+    \end{highlights}
+}
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PROJECTS
+%----------------------------------------------------------------------------------------
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Ateneo Enlistment Helper} & \hfill Oct 2024 – Present \\ [1pt]
+\multicolumn{2}{@{}X@{}}{
+    \textit{Personal Project}
+    \begin{highlights}
+        \item Created a comprehensive scheduling platform used by 500+ Ateneo students
+        \item Designed a responsive, intuitive interface enabling efficient course search and timetable creation
+        \item Achieved 3,000+ visits within the first semester post-launch
+    \end{highlights}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Ateneo QPI Calculator} & \hfill Aug 2024 – Present \\ [1pt]
+\multicolumn{2}{@{}X@{}}{
+    \textit{Personal Project}
+    \begin{highlights}
+        \item Built an automated QPI computation tool with program-based course autofill
+        \item Currently generating 9.6K+ sessions and 131K+ interactions, ranking \#2 on Google for "QPI calculator"
+        \item Simplified grade tracking and visualization for thousands of Ateneo students
+    \end{highlights}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{TEDxADMU Website} & \hfill Mar–Apr 2025 \\ [1pt]
+\multicolumn{2}{@{}X@{}}{
+    \textit{Team Project}
+    \begin{highlights}
+        \item Led a team of three to design and launch the official TEDxADMU 2025 website
+        \item Delivered a fast, modern platform that drove 1,000+ visits and supported 150+ registrations
+        \item Built using Next.js, Supabase, and Vercel, ensuring smooth navigation and clear event details
+    \end{highlights}
+}
+\end{tabularx}
+
 
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
-Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
+Languages \& Frameworks &  \normalsize{JavaScript (ES6+), TypeScript, Python, HTML, CSS}\\
+Libraries \& Tools &  \normalsize{React, Next.js, Node.js, PostgreSQL, Supabase, TailwindCSS, Git, Vercel}\\  
+Other Skills &  \normalsize{UI/UX Design, Agile Development, Product Strategy}\\
 \end{tabularx}
-
-\vfill
-\center{\footnotesize Last updated: \today}
 
 \end{document}
