@@ -48,21 +48,22 @@
 %	PACKAGES
 %----------------------------------------------------------------------------------------
 \usepackage{url}
-\usepackage{parskip} 	
+\usepackage{parskip}
+\usepackage{setspace}
+\setstretch{0.94} 	
 
 %other packages for formatting
 \RequirePackage{color}
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[
-    ignoreheadfoot, % set margins without considering header and footer
-    top=1.27 cm, % seperation between body and page edge from the top
-    bottom=1.27 cm, % seperation between body and page edge from the bottom
-    left=1.27 cm, % seperation between body and page edge from the left
-    right=1.27 cm, % seperation between body and page edge from the right
-    footskip=0.5 cm, % seperation between body and footer
-    % showframe % for debugging 
-]{geometry} % for adjusting page geometry
+    ignoreheadfoot,
+    top=1.0 cm,
+    bottom=1.0 cm,
+    left=1.1 cm,
+    right=1.1 cm,
+    footskip=0.35 cm,
+]{geometry}
 
 %tabularx environment
 \usepackage{tabularx}
@@ -86,18 +87,13 @@
 
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{3pt}{3pt}
-
-%for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{1.5pt}{1.5pt}
 
 %Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\addbibresource{citations.bib}
-\setlength\bibitemsep{1em}
 
 %for social icons
 \usepackage{fontawesome5}
@@ -107,13 +103,15 @@
 
 \newenvironment{highlights}{
     \begin{itemize}[
-        topsep=0.02 cm,
-        parsep=0.02 cm,
-        partopsep=0.02 cm
+        topsep=0pt,
+        parsep=0pt,
+        partopsep=0pt,
+        itemsep=0.5pt,
+        leftmargin=1.15em
     ]
 }{
     \end{itemize}
-} % new environment for highlights
+}
 
 
 % job listing environments
@@ -145,9 +143,8 @@
 %	BEGIN DOCUMENT
 %----------------------------------------------------------------------------------------
 \begin{document}
-
-% non-numbered pages
-\pagestyle{empty} 
+\pagestyle{empty}
+\setlength{\parskip}{0.35em} 
 
 %----------------------------------------------------------------------------------------
 %	TITLE
@@ -160,8 +157,8 @@
 % \end{tabularx}
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\textbf{\fontsize{18 pt}{18 pt}\selectfont Alexi Roth Luis A. Cañamo} \\
-\vspace{0.05 cm}
+\textbf{\fontsize{17 pt}{17 pt}\selectfont Alexi Roth Luis A. Cañamo} \\
+\vspace{0.02 cm}
 \href{https://github.com/itsalexi}{\color{black}\raisebox{-0.05\height}\faGithub\ itsalexi}\ \ $|$ \ 
 \href{https://linkedin.com/in/alexicanamo}{\color{black}\raisebox{-0.05\height}\faLinkedin\ alexicanamo} \ $|$ \ 
 \href{https://alexi.life}{\color{black}\raisebox{-0.05\height}\faGlobe\ alexi.life} \ $|$ \ 
@@ -175,7 +172,7 @@
 \section{Education}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Ateneo de Manila University} & \hfill Expected May 2028 \\ [1pt]
+\textbf{Ateneo de Manila University} & \hfill Expected May 2028 \\[0pt]
 \multicolumn{2}{@{}X@{}}{
     Bachelor's of Science in Computer Science
 }
@@ -187,29 +184,38 @@
 \section{Experience}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Software Engineer Intern} & \hfill Sep 2025 – Present \\ [1pt]
+\textbf{Software Engineer Intern} & \hfill Sep 2025 – Present \\[0pt]
 \multicolumn{2}{@{}X@{}}{
     \textit{NextPay (YC W21)}
     \begin{highlights}
-        \item Built complete marketing landing page end-to-end, from responsive UI design to production deployment
-        \item Collaborated with cross-functional team of 5+ engineers on customer-facing dashboard deployed to active clients, reducing manual processing time by 75\%
-        \item Developed scalable front-end components using React, Next.js, and TypeScript within agile workflow
+        \item Built marketing landing page end-to-end (responsive UI → production Next.js), live for acquisition; iterated with marketing on conversion
+        \item With 5+ engineers, shipped SME dashboard features in production; cut manual processing time by 75\% on money-movement and onboarding workflows
+        \item Landed 10+ production PRs (React, Next.js, TypeScript) with review, tests, two-week agile cadence
     \end{highlights}
 }
 \end{tabularx}
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Project Lead and Full-Stack Developer} & \hfill May 2025 – Present \\ [1pt]
+\textbf{Head of Product \& Engineering} & \hfill Jan 2026 – Present \\[0pt]
+\multicolumn{2}{@{}X@{}}{
+    \textit{Sip \& Scale}
+    \begin{highlights}
+        \item Lead product and engineering for the digital experience of Sip \& Scale, a global Gen Z community of founders, investors, and creators built around curated dinners across major tech hubs
+        \item Own marketing site, landing pages, and core web touchpoints end-to-end—storytelling, discovery, and engagement for a community that scaled from Manila to international hubs
+    \end{highlights}
+}
+\end{tabularx}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Project Lead and Full-Stack Developer} & \hfill May 2025 – Dec 2025 \\[0pt]
 \multicolumn{2}{@{}X@{}}{
     \textit{One Big Match}
     \begin{highlights}
-        \item Led product vision, backend development, and go-to-market planning for web app enhancing org events and mixers
-        \item Managed 3-person dev and design team and 7-person marketing and creatives team to deliver product features and campaign execution
-        \item Executed 4 pilot events with 80+ users to gather critical feedback, identifying and resolving 15+ bugs and UI/UX issues before public launch
+        \item Led product, backend, and GTM for web app for org events/mixers; managed 3-person dev/design and 7-person marketing/creatives for features and campaigns
+        \item Ran 4 pilot events (80+ users), gathering feedback and resolving 15+ bugs and UI/UX issues pre-launch
     \end{highlights}
 }
 \end{tabularx}
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{AVP for IT Skills and Development} & \hfill Jul 2025 – Present \\ [1pt]
+\textbf{AVP for IT Skills and Development} & \hfill Jul 2025 – Present \\[0pt]
 \multicolumn{2}{@{}X@{}}{
     \textit{Ateneo Management Information Systems Association (MISA)}
     \begin{highlights}
@@ -225,34 +231,44 @@
 \section{Projects}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{MISA Registration System} & \hfill 2024 – 2025 \\ [1pt]
+\textbf{MISA Registration System} & \hfill 2024 – 2025 \\[0pt]
 \multicolumn{2}{@{}X@{}}{
     \textit{Team Project}
     \begin{highlights}
-        \item Designed and deployed full-stack registration system servicing 525 MISA members using React, Node.js, and PostgreSQL, reducing on-site registration time by 75\% with streamlined check-in workflows and real-time attendance tracking across 15+ organization events
+        \item Full-stack registration for 525 MISA members (React, Node.js, PostgreSQL); cut on-site check-in time by 75\%; real-time attendance across 15+ org events
     \end{highlights}
 }
 \end{tabularx}
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Ateneo Enlistment Helper} & \hfill Oct 2024 – Present \\ [1pt]
+\textbf{Ateneo Student Tools Suite} & \hfill Aug 2024 – Present \\[0pt]
 \multicolumn{2}{@{}X@{}}{
-    \textit{Personal Project}
+    \textit{Personal projects}
     \begin{highlights}
-        \item Created comprehensive scheduling platform used by 500+ Ateneo students, generating 3,000+ visits for course search and timetable creation
+        \item \textbf{Enlistment Helper:} scheduling platform for course search and timetables, used by 500+ Ateneo students and 3,000+ visits
+        \item \textbf{QPI Calculator:} automated QPI computation with program-based course autofill, 9,600+ sessions and 131,000+ interactions, ranking \#2 on Google for ``QPI calculator''
     \end{highlights}
 }
 \end{tabularx}
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Ateneo QPI Calculator} & \hfill Aug 2024 – Present \\ [1pt]
+\textbf{SALBAR} & \hfill Feb 2026 \\[0pt]
 \multicolumn{2}{@{}X@{}}{
-    \textit{Personal Project}
+    \textit{First Naga Mayoral Hackathon — Top 5 finalist (Naga City LGU)}
     \begin{highlights}
-        \item Built automated QPI computation tool with program-based course autofill, generating 9,600+ sessions and 131,000+ interactions, ranking number 2 on Google for "QPI calculator"
+        \item Offline-first emergency health protocol for disaster and blackout scenarios; competed among 200+ teams; identified for post-hackathon incubation for LGU deployment
     \end{highlights}
 }
 \end{tabularx}
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{TEDxADMU Website} & \hfill Mar – Apr 2025 \\ [1pt]
+\textbf{Hakot} & \hfill Dec 2025 \\[0pt]
+\multicolumn{2}{@{}X@{}}{
+    \textit{Ship or Be Shipped Hackathon — 1st runner-up (Build and Ship Philippines)}
+    \begin{highlights}
+        \item AI-powered logistics marketplace connecting farmers and truck drivers to reduce empty backhauls and improve agricultural transport efficiency; 80+ participants
+    \end{highlights}
+}
+\end{tabularx}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{TEDxADMU Website} & \hfill Mar – Apr 2025 \\[0pt]
 \multicolumn{2}{@{}X@{}}{
     \textit{Team Project}
     \begin{highlights}
@@ -260,7 +276,6 @@
     \end{highlights}
 }
 \end{tabularx}
-
 
 %----------------------------------------------------------------------------------------
 %	SKILLS
