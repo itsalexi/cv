@@ -26,7 +26,7 @@
 %----------------------------------------------------------------------------------------
 
 % article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper, 10pt]{article}
+\documentclass[a4paper, 11pt]{article}
 
 %----------------------------------------------------------------------------------------
 %	FONT
@@ -50,7 +50,7 @@
 \usepackage{url}
 \usepackage{parskip}
 \usepackage{setspace}
-\setstretch{0.94} 	
+\setstretch{1.0} 	
 
 %other packages for formatting
 \RequirePackage{color}
@@ -58,8 +58,8 @@
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[
     ignoreheadfoot,
-    top=1.0 cm,
-    bottom=1.0 cm,
+    top=0.75 cm,
+    bottom=0.45 cm,
     left=1.1 cm,
     right=1.1 cm,
     footskip=0.35 cm,
@@ -87,8 +87,8 @@
 
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
-\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{1.5pt}{1.5pt}
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\vspace{1.5pt}\titlerule]
+\titlespacing{\section}{0pt}{4pt}{3pt}
 
 %Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
@@ -106,13 +106,15 @@
         topsep=0pt,
         parsep=0pt,
         partopsep=0pt,
-        itemsep=0.5pt,
+        itemsep=0.1pt,
         leftmargin=1.15em
     ]
 }{
     \end{itemize}
 }
 
+\newcommand{\workgap}{\vspace{0.15em}}
+\newcommand{\projectgap}{\vspace{0.1em}}
 
 % job listing environments
 \newenvironment{jobshort}[2]
@@ -144,7 +146,7 @@
 %----------------------------------------------------------------------------------------
 \begin{document}
 \pagestyle{empty}
-\setlength{\parskip}{0.35em} 
+\setlength{\parskip}{0pt} 
 
 %----------------------------------------------------------------------------------------
 %	TITLE
@@ -157,8 +159,8 @@
 % \end{tabularx}
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\textbf{\fontsize{17 pt}{17 pt}\selectfont Alexi Roth Luis A. Cañamo} \\
-\vspace{0.02 cm}
+\textbf{\fontsize{18 pt}{18 pt}\selectfont Alexi Roth Luis A. Cañamo} \\
+\vspace{0.04 cm}
 \href{https://github.com/itsalexi}{\color{black}\raisebox{-0.05\height}\faGithub\ itsalexi}\ \ $|$ \ 
 \href{https://linkedin.com/in/alexicanamo}{\color{black}\raisebox{-0.05\height}\faLinkedin\ alexicanamo} \ $|$ \ 
 \href{https://alexi.life}{\color{black}\raisebox{-0.05\height}\faGlobe\ alexi.life} \ $|$ \ 
@@ -174,7 +176,7 @@
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \textbf{Ateneo de Manila University} & \hfill Expected May 2028 \\[0pt]
 \multicolumn{2}{@{}X@{}}{
-    Bachelor's of Science in Computer Science
+    Bachelor of Science in Computer Science
 }
 \end{tabularx}
 
@@ -184,57 +186,39 @@
 \section{Experience}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Product Engineer, Agent Skills, Memory, \& Integrations} & \hfill May 2026 – Present | San Francisco, CA \\[0pt]
+\textbf{Product Engineer} & \hfill May 2026 – Present \\[0pt]
 \multicolumn{2}{@{}X@{}}{
-    \textit{Bytespace | Full-time, Remote}
+    \textit{Bytespace --- Full-time, San Francisco, CA (Remote)}
     \begin{highlights}
-        \item Owned delivery of 8 Bot0 improvements in under a month across agent workflows, memory, and integrations
-        \item Accelerated one of the platform's highest-leverage product areas across agent workflows, memory, and integrations
-        \item Shipped 5 integration and workflow reliability improvements in a week, reducing broken connection flows and making end-to-end automations more dependable for users
+        \item Shipped \textbf{25+} Bot0 product and infrastructure changes in \textbf{6 weeks} across agents, integrations, auth, workspace flows, and customer-facing UX
+        \item Built Bot0's paid-workspace controls across workspace creation, seat limits, team invites, permission checks, and paywall enforcement
+        \item Delivered \textbf{3} automation epics for skill reliability, session-scoped tests, and resilient agent execution
+        \item Closed \textbf{10} reliability and integration failures across OAuth, API-key auth, session timers, and external APIs
     \end{highlights}
 }
 \end{tabularx}
+\workgap
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Software Engineer Intern} & \hfill Sep 2025 – Present | NCR \\[0pt]
+\textbf{Product Engineering Intern} & \hfill Sep 2025 – Present \\[0pt]
 \multicolumn{2}{@{}X@{}}{
-    \textit{NextPay (YC W21) | Remote}
+    \textit{NextPay (YC W21) --- Internship, Manila, Philippines}
     \begin{highlights}
-        \item Built and launched a production marketing site, accelerating acquisition experiments with the marketing team
-        \item With 5+ engineers, shipped SME dashboard features for money-movement and onboarding workflows
-        \item Cut manual processing time by 75\% on SME dashboard money-movement and onboarding workflows
+        \item Led AR/invoices migration across \textbf{8} product surfaces, including invoices, reports, portal, settings, admin, dashboard, and app-shell routing
+        \item Cut median API requests by \textbf{15.6\%}, payload transfer by \textbf{12.9\%}, and workflow duration by \textbf{4.5\%} across repeated invoice and dashboard benchmarks
+        \item Eliminated \textbf{100\%} of duplicate and failed API request groups by standardizing TanStack Query keys, caching, workspace routing, and targeted invalidation
+        \item Added paginated/date-filtered transaction and posting APIs with \textbf{3} service methods and \textbf{3} unit-test suites
     \end{highlights}
 }
 \end{tabularx}
+\workgap
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Head of Product \& Engineering} & \hfill Jan 2026 – Present \\[0pt]
+\textbf{Product Engineer} & \hfill Jan 2026 – Present \\[0pt]
 \multicolumn{2}{@{}X@{}}{
-    \textit{Sip \& Scale | Hybrid}
+    \textit{Sip \& Scale --- Part-time, Manila, Philippines}
     \begin{highlights}
-        \item Own engineering, architecture, and internal systems for a Gen Z founder community spanning 20+ cities, 50+ events, and 1{,}000+ builders worldwide
-        \item Own the technical roadmap across the marketing site and internal systems supporting partnerships, operations, and community
-        \item Built a site ranking \#1 for branded search queries and driving 600 unique page views
+        \item Built launch, city, and event pages that helped Sip \& Scale grow from Manila dinners to \textbf{20+} cities, \textbf{50+} events, and \textbf{1,000+} builders worldwide
     \end{highlights}
 }
-\end{tabularx}
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Project Lead and Full-Stack Developer} & \hfill May 2025 – Dec 2025 | NCR \\[0pt]
-\multicolumn{2}{@{}X@{}}{
-    \textit{One Big Match | Hybrid}
-    \begin{highlights}
-        \item Led product, backend, and GTM for an events web app piloted across student communities
-        \item Coordinated a 10-person team across 4 pilot events and 80+ users
-    \end{highlights}
-}
-\end{tabularx}
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{AVP for IT Skills and Development} & \hfill Jul 2025 – Apr 2026 \\[0pt]
-\multicolumn{2}{@{}X@{}}{
-    \textit{Ateneo Management Information Systems Association (MISA)}
-    \begin{highlights}
-        \item Led a 4-part web development workshop series for 20+ student developers, raising the org's capacity to ship technical projects
-        \item Built an internal registration system that cut event check-in time by 75\% across MISA events
-    \end{highlights}
-    }
 \end{tabularx}
 %----------------------------------------------------------------------------------------
 %	PROJECTS
@@ -246,36 +230,38 @@
 \multicolumn{2}{@{}X@{}}{
     \textit{Personal projects}
     \begin{highlights}
-        \item \textbf{Enlistment Helper:} course search and timetable platform used by 500+ Ateneo students across 3,000+ visits
-        \item \textbf{QPI Calculator:} automated QPI tool with 9,600+ sessions, 131,000+ interactions, and \#2 ranking on Google for ``QPI calculator''
+        \item Grew QPI Calculator and Enlistment Helper to \textbf{35K} users and \textbf{445K} events from Dec 2024--Jul 2026
+        \item Generated \textbf{41.9K} Google clicks, \textbf{153K} impressions, and \textbf{27.3\%} CTR; ranked \textbf{top 2} for core QPI searches
     \end{highlights}
 }
 \end{tabularx}
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{SALBAR} & \hfill Feb 2026 \\[0pt]
-\multicolumn{2}{@{}X@{}}{
-    \textit{First Naga Mayoral Hackathon — Top 5 finalist (Naga City LGU)}
-    \begin{highlights}
-        \item Built an offline-first emergency health protocol for disaster and blackout scenarios; finished Top 5 of 200+ teams and was selected for LGU incubation
-    \end{highlights}
-}
-\end{tabularx}
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Hakot} & \hfill Dec 2025 \\[0pt]
-\multicolumn{2}{@{}X@{}}{
-    \textit{Ship or Be Shipped Hackathon — 1st runner-up (Build and Ship Philippines)}
-    \begin{highlights}
-        \item Built an AI-powered logistics marketplace connecting farmers and truck drivers to reduce empty backhauls; finished 1st runner-up out of 80+ participants
-    \end{highlights}
-}
-\end{tabularx}
+\projectgap
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \textbf{Hati} & \hfill 2026 \\[0pt]
 \multicolumn{2}{@{}X@{}}{
-    \textit{Personal project}
+    \textit{Consumer receipt-splitting product}
     \begin{highlights}
-        \item Built a bill-splitting and expense-tracking app for shared expenses
-        \item Reached 156 downloads, 200+ completed splits, and 200k+ in tracked volume
+        \item Grew Hati to \textbf{237} downloads by launching hati.me, waitlist capture, and shareable KKB split links
+    \end{highlights}
+}
+\end{tabularx}
+\projectgap
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{One Big Match} & \hfill May 2025 – Dec 2025 \\[0pt]
+\multicolumn{2}{@{}X@{}}{
+    \textit{Full-stack web app}
+    \begin{highlights}
+        \item Piloted matching platform across \textbf{4} org mixers and \textbf{80+} users; shipped \textbf{15+} fixes from pilot feedback
+    \end{highlights}
+}
+\end{tabularx}
+\projectgap
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{MISA Registration System} & \hfill 2024 – 2025 \\[0pt]
+\multicolumn{2}{@{}X@{}}{
+    \textit{Internal event tooling}
+    \begin{highlights}
+        \item Built registration/check-in tooling for \textbf{525} members across \textbf{15+} org events, cutting on-site check-in time by \textbf{75\%} and adding live attendance tracking
     \end{highlights}
 }
 \end{tabularx}
@@ -284,8 +270,8 @@
 %----------------------------------------------------------------------------------------
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Languages and Frameworks: &  \normalsize{JavaScript (ES6+), TypeScript, Python, HTML, CSS}\\
-Libraries and Tools: &  \normalsize{React, Next.js, Node.js, PostgreSQL, Supabase, TailwindCSS, Git, Vercel}\\
+Languages: &  \normalsize{TypeScript, JavaScript, Python, Swift, Kotlin, HTML, CSS}\\
+Tools: &  \normalsize{React, Next.js, TanStack Query/Router, Node.js, PostgreSQL, Convex, Supabase, SwiftUI}\\
 \end{tabularx}
 
 \end{document}
