@@ -88,7 +88,7 @@
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\vspace{1.5pt}\titlerule]
-\titlespacing{\section}{0pt}{4pt}{3pt}
+\titlespacing{\section}{0pt}{9pt}{5pt}
 
 %Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
@@ -106,15 +106,25 @@
         topsep=0pt,
         parsep=0pt,
         partopsep=0pt,
-        itemsep=0.1pt,
+        itemsep=1.6pt,
         leftmargin=1.15em
     ]
 }{
     \end{itemize}
 }
 
-\newcommand{\workgap}{\vspace{0.15em}}
-\newcommand{\projectgap}{\vspace{0.1em}}
+\newcommand{\workgap}{\vspace{0.75em}}
+\newcommand{\projectgap}{\vspace{0.75em}}
+
+% Two-line entry header, standard finance CV layout:
+%   #1 organisation (bold)   #2 location (right)
+%   #3 role (italic)         #4 dates (right)
+\newcommand{\entry}[4]{%
+\begin{tabularx}{\linewidth}{@{}X r@{}}
+\textbf{#1} & #2 \\[1.5pt]
+\textit{#3} & \textit{#4} \\[2.5pt]
+\end{tabularx}%
+}
 
 % job listing environments
 \newenvironment{jobshort}[2]
@@ -173,81 +183,53 @@
 %----------------------------------------------------------------------------------------
 \section{Education}
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Ateneo de Manila University} --- Manila, Philippines & \hfill Expected May 2028 \\[0pt]
-\multicolumn{2}{@{}X@{}}{
-    Bachelor of Science in Computer Science
-    % TODO: add QPI/GPA here if 3.0+ equivalent, plus any Dean's List / scholarship / relevant
-    % coursework (statistics, data science, finance electives). JPM screens on academics.
-}
-\end{tabularx}
+\entry{Ateneo de Manila University}{Manila, Philippines}{Bachelor of Science in Computer Science}{Expected May 2028}
 
 %----------------------------------------------------------------------------------------
 %	EXPERIENCE
 %----------------------------------------------------------------------------------------
-\section{Experience}
+\section{Professional Experience}
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Swarm} --- Software Engineer Intern & \hfill Jul 2026 – Present \\[0pt]
-\multicolumn{2}{@{}X@{}}{
-    \begin{highlights}
-        \item Client security questionnaires were answered from a knowledge base no one could audit; consolidated \textbf{2,711} requirements from \textbf{7} frameworks --- GDPR, UK GDPR, the Philippine Data Privacy Act, NIST CSF 2.0, and NIST AI RMF --- so every answer now resolves to an exact offset in a fingerprinted source
-        \item Overlapping frameworks forced the same controls to be re-evidenced one framework at a time; derived \textbf{2,182} scored cross-framework links that surface where existing controls already satisfy a second framework, removing that duplicated effort
-        \item Extracted requirements drift from their source text under review pressure; set a verbatim-or-rejected standard and reconciled \textbf{2} independent extraction passes, leaving nothing in the corpus that cannot be checked against the published standard
-    \end{highlights}
-}
-\end{tabularx}
+\entry{Swarm}{Remote}{Software Engineer Intern}{Jul 2026 – Present}
+\begin{highlights}
+    \item Building the firm's compliance engine: a cross-framework graph that unifies privacy and security obligations from GDPR, UK GDPR, the Philippine Data Privacy Act, NIST CSF 2.0, and the NIST AI Risk Management Framework
+    \item Answers to client security questionnaires came from a knowledge base that could not be audited; every requirement now resolves to an exact position in a fingerprinted source document, so any answer can be traced back and checked
+    \item Equivalent obligations are linked across frameworks with a confidence score and written rationale, surfacing controls that already satisfy a second standard instead of having them evidenced twice
+\end{highlights}
 \workgap
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{NextPay (Y Combinator W21)} --- Product Engineering Intern & \hfill Sep 2025 – Present \\[0pt]
-\multicolumn{2}{@{}X@{}}{
-    \begin{highlights}
-        \item Led the accounts receivable and invoicing migration across \textbf{8} client-facing surfaces of a digital payments platform serving Philippine SMEs, keeping live merchant workflows uninterrupted throughout
-        \item Benchmarked repeated invoice and dashboard journeys, then cut median API calls \textbf{15.6\%}, data transferred \textbf{12.9\%}, and workflow duration \textbf{4.5\%} by targeting the highest-cost paths
-        \item Eliminated \textbf{100\%} of duplicate and failed request groups via a standardised caching and invalidation model, removing a recurring source of inconsistent figures shown to merchants
-        \item Delivered paginated, date-filtered transaction and posting APIs backed by \textbf{3} test suites, letting users retrieve full payment and ledger history at scale
-    \end{highlights}
-}
-\end{tabularx}
+
+\entry{NextPay (Y Combinator W21)}{Manila, Philippines}{Product Engineering Intern}{Sep 2025 – Present}
+\begin{highlights}
+    \item Led the accounts receivable and invoicing migration across \textbf{8} client-facing surfaces of a digital payments platform serving Philippine SMEs, keeping live merchant workflows uninterrupted throughout
+    \item Benchmarked the invoice and dashboard journeys merchants repeat daily, then cut median API calls \textbf{15.6\%}, data transferred \textbf{12.9\%}, and workflow duration \textbf{4.5\%} by targeting the highest-cost paths
+    \item Eliminated \textbf{100\%} of duplicate and failed request groups through a standardised caching and invalidation model, removing a recurring source of inconsistent figures shown to merchants
+    \item Delivered paginated, date-filtered transaction and posting APIs backed by \textbf{3} test suites, letting users retrieve full payment and ledger history at scale
+\end{highlights}
 \workgap
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Bytespace} --- Product Engineer & \hfill May 2026 – Jul 2026 \\[0pt]
-\multicolumn{2}{@{}X@{}}{
-    \begin{highlights}
-        \item Joined a San Francisco AI startup with a roadmap changing week to week; shipped \textbf{25+} product and infrastructure changes across integrations, authentication, and customer experience in \textbf{6 weeks} with minimal supervision
-        \item Owned the commercial controls behind paid workspaces --- seat limits, team invitations, permission checks, and entitlement enforcement --- enabling the company to sell and govern paid accounts
-    \end{highlights}
-}
-\end{tabularx}
-%----------------------------------------------------------------------------------------
-%	PROJECTS
-%----------------------------------------------------------------------------------------
-\section{Leadership}
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Ateneo MISA} --- AVP for IT Skills and Development & \hfill Jul 2025 – Apr 2026 \\[0pt]
-\multicolumn{2}{@{}X@{}}{
-    \begin{highlights}
-        \item Led a \textbf{4}-part web development workshop series for \textbf{20+} student developers, raising the organisation's capacity to deliver technical projects
-        \item Replaced a manual sign-in process with a registration and check-in system for \textbf{525} members across \textbf{15+} events, cutting check-in time \textbf{75\%} and giving organisers live attendance data
-    \end{highlights}
-}
-\end{tabularx}
+\entry{Bytespace}{San Francisco, CA (Remote)}{Product Engineer}{May 2026 – Jul 2026}
+\begin{highlights}
+    \item Joined with a roadmap changing week to week; shipped \textbf{25+} product and infrastructure changes across integrations, authentication, and customer experience in \textbf{6 weeks} with minimal supervision
+    \item Owned the commercial controls behind paid workspaces --- seat limits, team invitations, permission checks, and entitlement enforcement --- enabling the company to sell and govern paid accounts
+\end{highlights}
 
 %----------------------------------------------------------------------------------------
-%	PROJECTS
+%	LEADERSHIP & ACTIVITIES
 %----------------------------------------------------------------------------------------
-\section{Projects}
+\section{Leadership \& Activities}
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Ateneo Student Tools Suite} --- Founder and sole operator & \hfill Aug 2024 – Present \\[0pt]
-\multicolumn{2}{@{}X@{}}{
-    \begin{highlights}
-        \item Identified an unmet need in course enlistment and grade forecasting and grew the QPI Calculator and Enlistment Helper to \textbf{35K} users and \textbf{445K} tracked events (Dec 2024--Jul 2026), running the tools single-handedly through peak registration periods
-        \item Used search and usage analytics to prioritise features, reaching \textbf{41.9K} clicks, \textbf{153K} impressions, a \textbf{27.3\%} click-through rate, and \textbf{top 2} ranking for core student searches
-    \end{highlights}
-}
-\end{tabularx}
+\entry{Ateneo Management Information Systems Association}{Manila, Philippines}{AVP for IT Skills and Development}{Jul 2025 – Apr 2026}
+\begin{highlights}
+    \item Led a \textbf{4}-part web development workshop series for \textbf{20+} student developers, raising the organisation's capacity to deliver technical projects
+    \item Replaced a manual sign-in process with a registration and check-in system for \textbf{525} members across \textbf{15+} events, cutting check-in time \textbf{75\%} and giving organisers live attendance data
+\end{highlights}
+\projectgap
+
+\entry{Ateneo Student Tools Suite}{Manila, Philippines}{Founder and Sole Operator}{Aug 2024 – Present}
+\begin{highlights}
+    \item Identified an unmet need in course enlistment and grade forecasting and grew the QPI Calculator and Enlistment Helper to \textbf{35K} users and \textbf{445K} tracked events, running both tools single-handedly through peak registration periods
+    \item Prioritised features from search and usage analytics, reaching \textbf{41.9K} clicks, \textbf{153K} impressions, a \textbf{27.3\%} click-through rate, and \textbf{top 2} ranking for core student searches
+\end{highlights}
 
 %----------------------------------------------------------------------------------------
 %	SKILLS
