@@ -26,7 +26,7 @@
 %----------------------------------------------------------------------------------------
 
 % article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper, 11pt]{article}
+\documentclass[a4paper, 10pt]{article}
 
 %----------------------------------------------------------------------------------------
 %	FONT
@@ -161,11 +161,20 @@
 \begin{tabularx}{\linewidth}{@{} C @{}}
 \textbf{\fontsize{18 pt}{18 pt}\selectfont Alexi Roth Luis A. Cañamo} \\
 \vspace{0.04 cm}
-\href{https://github.com/itsalexi}{\color{black}\raisebox{-0.05\height}\faGithub\ itsalexi}\ \ $|$ \ 
-\href{https://linkedin.com/in/alexicanamo}{\color{black}\raisebox{-0.05\height}\faLinkedin\ alexicanamo} \ $|$ \ 
-\href{https://alexi.life}{\color{black}\raisebox{-0.05\height}\faGlobe\ alexi.life} \ $|$ \ 
-\href{mailto:alexicanamo@gmail.com}{\color{black}\raisebox{-0.05\height}\faEnvelope\ alexicanamo@gmail.com} \ $|$ \ 
-\href{tel:+639163138897}{\color{black}\raisebox{-0.05\height}\faMobile\ 0916 313 8897} \\
+\raisebox{-0.05\height}\faMapMarker\ Manila, Philippines \ $|$ \
+\href{mailto:alexicanamo@gmail.com}{\color{black}\raisebox{-0.05\height}\faEnvelope\ alexicanamo@gmail.com} \ $|$ \
+\href{tel:+639163138897}{\color{black}\raisebox{-0.05\height}\faMobile\ 0916 313 8897} \ $|$ \
+\href{https://linkedin.com/in/alexicanamo}{\color{black}\raisebox{-0.05\height}\faLinkedin\ alexicanamo} \ $|$ \
+\href{https://alexi.life}{\color{black}\raisebox{-0.05\height}\faGlobe\ alexi.life} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	SUMMARY
+%----------------------------------------------------------------------------------------
+\section{Profile}
+
+\begin{tabularx}{\linewidth}{@{}X@{}}
+Computer Science undergraduate (expected May 2028) with two years of product and analytics experience in fintech and early-stage technology, including a Y Combinator-backed Philippine payments company serving SMEs. Track record of turning data into decisions, improving operational processes, and owning initiatives end to end with cross-functional teams --- now seeking to apply that judgement across the businesses of a global financial institution.
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -174,9 +183,11 @@
 \section{Education}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Ateneo de Manila University} & \hfill Expected May 2028 \\[0pt]
+\textbf{Ateneo de Manila University} --- Manila, Philippines & \hfill Expected May 2028 \\[0pt]
 \multicolumn{2}{@{}X@{}}{
     Bachelor of Science in Computer Science
+    % TODO: add QPI/GPA here if 3.0+ equivalent, plus any Dean's List / scholarship / relevant
+    % coursework (statistics, data science, finance electives). JPM screens on academics.
 }
 \end{tabularx}
 
@@ -186,92 +197,97 @@
 \section{Experience}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Product Engineer} & \hfill May 2026 – Present \\[0pt]
+\textbf{NextPay (Y Combinator W21)} --- Product Engineering Intern & \hfill Sep 2025 – Present \\[0pt]
 \multicolumn{2}{@{}X@{}}{
-    \textit{Bytespace --- Full-time, San Francisco, CA (Remote)}
+    \textit{Digital payments and financial operations platform for Philippine SMEs --- Manila, Philippines}
     \begin{highlights}
-        \item Shipped \textbf{25+} Bot0 product and infrastructure changes in \textbf{6 weeks} across agents, integrations, auth, workspace flows, and customer-facing UX
-        \item Built Bot0's paid-workspace controls across workspace creation, seat limits, team invites, permission checks, and paywall enforcement
-        \item Delivered \textbf{3} automation epics for skill reliability, session-scoped tests, and resilient agent execution
-        \item Closed \textbf{10} reliability and integration failures across OAuth, API-key auth, session timers, and external APIs
+        \item Led the accounts receivable and invoicing migration across \textbf{8} client-facing surfaces --- invoices, reports, customer portal, admin, and dashboards --- coordinating with product and engineering to keep live merchant workflows uninterrupted
+        \item Benchmarked repeated invoice and dashboard journeys, then cut median API calls \textbf{15.6\%}, data transferred \textbf{12.9\%}, and workflow duration \textbf{4.5\%} by targeting the highest-cost paths
+        \item Eliminated \textbf{100\%} of duplicate and failed request groups via a standardised caching and invalidation model, removing a recurring source of inconsistent figures shown to merchants
+        \item Delivered paginated, date-filtered transaction and posting APIs backed by \textbf{3} test suites, letting users retrieve full payment and ledger history at scale
     \end{highlights}
 }
 \end{tabularx}
 \workgap
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Product Engineering Intern} & \hfill Sep 2025 – Present \\[0pt]
+\textbf{Bytespace} --- Product Engineer & \hfill May 2026 – Present \\[0pt]
 \multicolumn{2}{@{}X@{}}{
-    \textit{NextPay (YC W21) --- Internship, Manila, Philippines}
+    \textit{Venture-backed AI workflow startup --- San Francisco, CA (Remote)}
     \begin{highlights}
-        \item Led AR/invoices migration across \textbf{8} product surfaces, including invoices, reports, portal, settings, admin, dashboard, and app-shell routing
-        \item Cut median API requests by \textbf{15.6\%}, payload transfer by \textbf{12.9\%}, and workflow duration by \textbf{4.5\%} across repeated invoice and dashboard benchmarks
-        \item Eliminated \textbf{100\%} of duplicate and failed API request groups by standardizing TanStack Query keys, caching, workspace routing, and targeted invalidation
-        \item Added paginated/date-filtered transaction and posting APIs with \textbf{3} service methods and \textbf{3} unit-test suites
+        \item Shipped \textbf{25+} product and infrastructure changes in \textbf{6 weeks} across integrations, authentication, workspace flows, and customer experience, working with minimal supervision against a fast-changing roadmap
+        \item Owned the commercial controls behind paid workspaces --- seat limits, team invitations, permission checks, and entitlement enforcement --- enabling the company to sell and govern paid accounts
+        \item Drove \textbf{3} automation initiatives across reliability and testing, reducing manual verification before each release, and closed \textbf{10} integration failures by tightening controls around authentication and external data dependencies
     \end{highlights}
 }
 \end{tabularx}
 \workgap
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Product Engineer} & \hfill Jan 2026 – Present \\[0pt]
+\textbf{Sip \& Scale} --- Product Engineer (Part-time) & \hfill Jan 2026 – Present \\[0pt]
 \multicolumn{2}{@{}X@{}}{
-    \textit{Sip \& Scale --- Part-time, Manila, Philippines}
+    \textit{International founder and operator community --- Manila, Philippines}
     \begin{highlights}
-        \item Built launch, city, and event pages that helped Sip \& Scale grow from Manila dinners to \textbf{20+} cities, \textbf{50+} events, and \textbf{1,000+} builders worldwide
+        \item Built the launch, city, and event platform behind expansion from Manila dinners to \textbf{20+} cities, \textbf{50+} events, and \textbf{1,000+} members, working with organisers across markets to standardise each city launch
     \end{highlights}
 }
 \end{tabularx}
 %----------------------------------------------------------------------------------------
 %	PROJECTS
 %----------------------------------------------------------------------------------------
-\section{Projects}
+\section{Selected Projects \& University Involvement}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Ateneo Student Tools Suite} & \hfill Aug 2024 – Present \\[0pt]
+\textbf{Ateneo Student Tools Suite} --- Founder and sole operator & \hfill Aug 2024 – Present \\[0pt]
 \multicolumn{2}{@{}X@{}}{
-    \textit{Personal projects}
     \begin{highlights}
-        \item Grew QPI Calculator and Enlistment Helper to \textbf{35K} users and \textbf{445K} events from Dec 2024--Jul 2026
-        \item Generated \textbf{41.9K} Google clicks, \textbf{153K} impressions, and \textbf{27.3\%} CTR; ranked \textbf{top 2} for core QPI searches
+        \item Identified an unmet need in course enlistment and grade forecasting and grew the QPI Calculator and Enlistment Helper to \textbf{35K} users and \textbf{445K} tracked events (Dec 2024--Jul 2026), running the tools single-handedly through peak registration periods
+        \item Used search and usage analytics to prioritise features, reaching \textbf{41.9K} clicks, \textbf{153K} impressions, a \textbf{27.3\%} click-through rate, and \textbf{top 2} ranking for core student searches
     \end{highlights}
 }
 \end{tabularx}
 \projectgap
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Hati} & \hfill 2026 \\[0pt]
+\textbf{MISA Registration System} --- Ateneo student organisation & \hfill 2024 – 2025 \\[0pt]
 \multicolumn{2}{@{}X@{}}{
-    \textit{Consumer receipt-splitting product}
     \begin{highlights}
-        \item Grew Hati to \textbf{237} downloads by launching hati.me, waitlist capture, and shareable KKB split links
+        \item Replaced a manual sign-in process with registration and check-in tooling for \textbf{525} members across \textbf{15+} events, cutting check-in time \textbf{75\%} and giving organisers live attendance data
     \end{highlights}
 }
 \end{tabularx}
 \projectgap
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{One Big Match} & \hfill May 2025 – Dec 2025 \\[0pt]
+\textbf{Hati} --- Consumer bill-splitting product & \hfill 2026 \\[0pt]
 \multicolumn{2}{@{}X@{}}{
-    \textit{Full-stack web app}
     \begin{highlights}
-        \item Piloted matching platform across \textbf{4} org mixers and \textbf{80+} users; shipped \textbf{15+} fixes from pilot feedback
+        \item Took a consumer payments product from concept to market on my own --- landing page, waitlist, and shareable split links --- reaching \textbf{237} downloads with no paid acquisition
     \end{highlights}
 }
 \end{tabularx}
-\projectgap
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{MISA Registration System} & \hfill 2024 – 2025 \\[0pt]
-\multicolumn{2}{@{}X@{}}{
-    \textit{Internal event tooling}
-    \begin{highlights}
-        \item Built registration/check-in tooling for \textbf{525} members across \textbf{15+} org events, cutting on-site check-in time by \textbf{75\%} and adding live attendance tracking
-    \end{highlights}
-}
-\end{tabularx}
+
+% ---------------------------------------------------------------------------------------
+% TODO (IMPORTANT — read before submitting):
+% The job posting explicitly requires "demonstrated leadership in school or community
+% organisations". Nothing on this CV states a position held. If you have held ANY officer,
+% committee, or project-head role (MISA, other orgs, volunteering, case competitions,
+% hackathons, scholarships, varsity//arts), add a "Leadership" entry here with the exact
+% title and dates. This is the single highest-value addition you can still make.
+% Format:
+% \begin{tabularx}{\linewidth}{ @{}l r@{} }
+% \textbf{Organisation} --- Position Title & \hfill Dates \\[0pt]
+% \multicolumn{2}{@{}X@{}}{\begin{highlights}
+%   \item What you were responsible for, how many people, and the measurable outcome
+% \end{highlights}}
+% \end{tabularx}
+% ---------------------------------------------------------------------------------------
+
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
-\section{Skills}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-Languages: &  \normalsize{TypeScript, JavaScript, Python, Swift, Kotlin, HTML, CSS}\\
-Tools: &  \normalsize{React, Next.js, TanStack Query/Router, Node.js, PostgreSQL, Convex, Supabase, SwiftUI}\\
+\section{Skills \& Additional Information}
+\begin{tabularx}{\linewidth}{@{}l >{\raggedright\arraybackslash}X@{}}
+Analysis: & \normalsize{Microsoft Excel, PowerPoint, SQL/PostgreSQL, Google Analytics and Search Console, performance benchmarking}\\
+Technical: &  \normalsize{TypeScript, JavaScript, Python, Swift, Kotlin; React, Next.js, Node.js, Supabase, Convex}\\
+Languages: &  \normalsize{Filipino/Tagalog (native), English (professional working proficiency)}\\
+Eligibility: &  \normalsize{Filipino citizen with the right to work in the Philippines; no visa sponsorship required}\\
 \end{tabularx}
 
 \end{document}
