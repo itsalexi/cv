@@ -88,7 +88,7 @@
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\vspace{1.5pt}\titlerule]
-\titlespacing{\section}{0pt}{4pt}{3pt}
+\titlespacing{\section}{0pt}{9pt}{5pt}
 
 %Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
@@ -106,15 +106,35 @@
         topsep=0pt,
         parsep=0pt,
         partopsep=0pt,
-        itemsep=0.1pt,
+        itemsep=1.6pt,
         leftmargin=1.15em
     ]
 }{
     \end{itemize}
 }
 
-\newcommand{\workgap}{\vspace{0.15em}}
-\newcommand{\projectgap}{\vspace{0.1em}}
+\newcommand{\workgap}{\vspace{0.75em}}
+\newcommand{\projectgap}{\vspace{0.6em}}
+
+% Two-line entry header:
+%   #1 organisation (bold)   #2 location (right)
+%   #3 role (italic)         #4 dates (right, italic)
+\newcommand{\entry}[4]{%
+\begin{tabularx}{\linewidth}{@{}X r@{}}
+\textbf{#1} & #2 \\[1.5pt]
+\textit{#3} & \textit{#4} \\[2.5pt]
+\end{tabularx}%
+}
+
+% Two-line project header:
+%   #1 name (bold)           #2 dates (right, italic)
+%   #3 one-line descriptor (italic)
+\newcommand{\projentry}[3]{%
+\begin{tabularx}{\linewidth}{@{}X r@{}}
+\textbf{#1} & \textit{#2} \\[1.5pt]
+\textit{#3} & \\[2.5pt]
+\end{tabularx}%
+}
 
 % job listing environments
 \newenvironment{jobshort}[2]
@@ -173,98 +193,65 @@
 %----------------------------------------------------------------------------------------
 \section{Education}
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Ateneo de Manila University} & \hfill Expected May 2028 \\[0pt]
-\multicolumn{2}{@{}X@{}}{
-    Bachelor of Science in Computer Science
-}
-\end{tabularx}
+\entry{Ateneo de Manila University}{Manila, Philippines}{Bachelor of Science in Computer Science}{Expected May 2028}
 
 %----------------------------------------------------------------------------------------
 %	EXPERIENCE
 %----------------------------------------------------------------------------------------
 \section{Experience}
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Product Engineer} & \hfill May 2026 – Present \\[0pt]
-\multicolumn{2}{@{}X@{}}{
-    \textit{Bytespace --- Full-time, San Francisco, CA (Remote)}
-    \begin{highlights}
-        \item Shipped \textbf{25+} Bot0 product and infrastructure changes in \textbf{6 weeks} across agents, integrations, auth, workspace flows, and customer-facing UX
-        \item Built Bot0's paid-workspace controls across workspace creation, seat limits, team invites, permission checks, and paywall enforcement
-        \item Delivered \textbf{3} automation epics for skill reliability, session-scoped tests, and resilient agent execution
-        \item Closed \textbf{10} reliability and integration failures across OAuth, API-key auth, session timers, and external APIs
-    \end{highlights}
-}
-\end{tabularx}
+\entry{Bytespace}{San Francisco, CA (Remote)}{Product Engineer, Full-time}{May 2026 – Present}
+\begin{highlights}
+    \item Shipped \textbf{25+} Bot0 product and infrastructure changes in \textbf{6 weeks} across agents, integrations, auth, workspace flows, and customer-facing UX
+    \item Built Bot0's paid-workspace controls across workspace creation, seat limits, team invites, permission checks, and paywall enforcement
+    \item Delivered \textbf{3} automation epics for skill reliability, session-scoped tests, and resilient agent execution
+    \item Closed \textbf{10} reliability and integration failures across OAuth, API-key auth, session timers, and external APIs
+\end{highlights}
 \workgap
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Product Engineering Intern} & \hfill Sep 2025 – Present \\[0pt]
-\multicolumn{2}{@{}X@{}}{
-    \textit{NextPay (YC W21) --- Internship, Manila, Philippines}
-    \begin{highlights}
-        \item Led AR/invoices migration across \textbf{8} product surfaces, including invoices, reports, portal, settings, admin, dashboard, and app-shell routing
-        \item Cut median API requests by \textbf{15.6\%}, payload transfer by \textbf{12.9\%}, and workflow duration by \textbf{4.5\%} across repeated invoice and dashboard benchmarks
-        \item Eliminated \textbf{100\%} of duplicate and failed API request groups by standardizing TanStack Query keys, caching, workspace routing, and targeted invalidation
-        \item Added paginated/date-filtered transaction and posting APIs with \textbf{3} service methods and \textbf{3} unit-test suites
-    \end{highlights}
-}
-\end{tabularx}
+
+\entry{NextPay (YC W21)}{Manila, Philippines}{Product Engineering Intern}{Sep 2025 – Present}
+\begin{highlights}
+    \item Led AR/invoices migration across \textbf{8} product surfaces, including invoices, reports, portal, settings, admin, dashboard, and app-shell routing
+    \item Cut median API requests by \textbf{15.6\%}, payload transfer by \textbf{12.9\%}, and workflow duration by \textbf{4.5\%} across repeated invoice and dashboard benchmarks
+    \item Eliminated \textbf{100\%} of duplicate and failed API request groups by standardizing TanStack Query keys, caching, workspace routing, and targeted invalidation
+    \item Added paginated/date-filtered transaction and posting APIs with \textbf{3} service methods and \textbf{3} unit-test suites
+\end{highlights}
 \workgap
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Product Engineer} & \hfill Jan 2026 – Present \\[0pt]
-\multicolumn{2}{@{}X@{}}{
-    \textit{Sip \& Scale --- Part-time, Manila, Philippines}
-    \begin{highlights}
-        \item Built launch, city, and event pages that helped Sip \& Scale grow from Manila dinners to \textbf{20+} cities, \textbf{50+} events, and \textbf{1,000+} builders worldwide
-    \end{highlights}
-}
-\end{tabularx}
+
+\entry{Sip \& Scale}{Manila, Philippines}{Product Engineer, Part-time}{Jan 2026 – Present}
+\begin{highlights}
+    \item Built launch, city, and event pages that helped Sip \& Scale grow from Manila dinners to \textbf{20+} cities, \textbf{50+} events, and \textbf{1,000+} builders worldwide
+\end{highlights}
+
 %----------------------------------------------------------------------------------------
 %	PROJECTS
 %----------------------------------------------------------------------------------------
 \section{Projects}
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Ateneo Student Tools Suite} & \hfill Aug 2024 – Present \\[0pt]
-\multicolumn{2}{@{}X@{}}{
-    \textit{Personal projects}
-    \begin{highlights}
-        \item Grew QPI Calculator and Enlistment Helper to \textbf{35K} users and \textbf{445K} events from Dec 2024--Jul 2026
-        \item Generated \textbf{41.9K} Google clicks, \textbf{153K} impressions, and \textbf{27.3\%} CTR; ranked \textbf{top 2} for core QPI searches
-    \end{highlights}
-}
-\end{tabularx}
+\projentry{Ateneo Student Tools Suite}{Aug 2024 – Present}{Personal projects}
+\begin{highlights}
+    \item Grew QPI Calculator and Enlistment Helper to \textbf{35K} users and \textbf{445K} events from Dec 2024--Jul 2026
+    \item Generated \textbf{41.9K} Google clicks, \textbf{153K} impressions, and \textbf{27.3\%} CTR; ranked \textbf{top 2} for core QPI searches
+\end{highlights}
 \projectgap
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Hati} & \hfill 2026 \\[0pt]
-\multicolumn{2}{@{}X@{}}{
-    \textit{Consumer receipt-splitting product}
-    \begin{highlights}
-        \item Grew Hati to \textbf{237} downloads by launching hati.me, waitlist capture, and shareable KKB split links
-    \end{highlights}
-}
-\end{tabularx}
+
+\projentry{Hati}{2026}{Consumer receipt-splitting product}
+\begin{highlights}
+    \item Grew Hati to \textbf{237} downloads by launching hati.me, waitlist capture, and shareable KKB split links
+\end{highlights}
 \projectgap
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{One Big Match} & \hfill May 2025 – Dec 2025 \\[0pt]
-\multicolumn{2}{@{}X@{}}{
-    \textit{Full-stack web app}
-    \begin{highlights}
-        \item Piloted matching platform across \textbf{4} org mixers and \textbf{80+} users; shipped \textbf{15+} fixes from pilot feedback
-    \end{highlights}
-}
-\end{tabularx}
+
+\projentry{One Big Match}{May 2025 – Dec 2025}{Full-stack matching platform}
+\begin{highlights}
+    \item Piloted matching platform across \textbf{4} org mixers and \textbf{80+} users; shipped \textbf{15+} fixes from pilot feedback
+\end{highlights}
 \projectgap
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{MISA Registration System} & \hfill 2024 – 2025 \\[0pt]
-\multicolumn{2}{@{}X@{}}{
-    \textit{Internal event tooling}
-    \begin{highlights}
-        \item Built registration/check-in tooling for \textbf{525} members across \textbf{15+} org events, cutting on-site check-in time by \textbf{75\%} and adding live attendance tracking
-    \end{highlights}
-}
-\end{tabularx}
+
+\projentry{MISA Registration System}{2024 – 2025}{Internal event tooling}
+\begin{highlights}
+    \item Built registration/check-in tooling for \textbf{525} members across \textbf{15+} org events, cutting on-site check-in time by \textbf{75\%} and adding live attendance tracking
+\end{highlights}
+
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
