@@ -88,7 +88,7 @@
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\vspace{1.5pt}\titlerule]
-\titlespacing{\section}{0pt}{9pt}{5pt}
+\titlespacing{\section}{0pt}{4pt}{2.5pt}
 
 %Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
@@ -106,23 +106,23 @@
         topsep=0pt,
         parsep=0pt,
         partopsep=0pt,
-        itemsep=1.6pt,
+        itemsep=0.3pt,
         leftmargin=1.15em
     ]
 }{
     \end{itemize}
 }
 
-\newcommand{\workgap}{\vspace{0.75em}}
-\newcommand{\projectgap}{\vspace{0.6em}}
+\newcommand{\workgap}{\vspace{0.3em}}
+\newcommand{\projectgap}{\vspace{0.3em}}
 
 % Two-line entry header:
 %   #1 organisation (bold)   #2 location (right)
 %   #3 role (italic)         #4 dates (right, italic)
 \newcommand{\entry}[4]{%
 \begin{tabularx}{\linewidth}{@{}X r@{}}
-\textbf{#1} & #2 \\[1.5pt]
-\textit{#3} & \textit{#4} \\[2.5pt]
+\textbf{#1} & #2 \\[1pt]
+\textit{#3} & \textit{#4} \\[1.5pt]
 \end{tabularx}%
 }
 
@@ -131,8 +131,8 @@
 %   #3 one-line descriptor (italic)
 \newcommand{\projentry}[3]{%
 \begin{tabularx}{\linewidth}{@{}X r@{}}
-\textbf{#1} & \textit{#2} \\[1.5pt]
-\textit{#3} & \\[2.5pt]
+\textbf{#1} & \textit{#2} \\[1pt]
+\textit{#3} & \\[1.5pt]
 \end{tabularx}%
 }
 
@@ -200,12 +200,12 @@
 %----------------------------------------------------------------------------------------
 \section{Experience}
 
-\entry{Bytespace}{San Francisco, CA (Remote)}{Product Engineer, Full-time}{May 2026 – Present}
+\entry{Swarm}{Manila, Philippines}{Software Engineer Intern}{Jul 2026 – Present}
 \begin{highlights}
-    \item Shipped \textbf{25+} Bot0 product and infrastructure changes in \textbf{6 weeks} across agents, integrations, auth, workspace flows, and customer-facing UX
-    \item Built Bot0's paid-workspace controls across workspace creation, seat limits, team invites, permission checks, and paywall enforcement
-    \item Delivered \textbf{3} automation epics for skill reliability, session-scoped tests, and resilient agent execution
-    \item Closed \textbf{10} reliability and integration failures across OAuth, API-key auth, session timers, and external APIs
+    \item Built a cross-framework compliance graph linking \textbf{2,711} requirements across \textbf{7} privacy and security frameworks, including GDPR, UK GDPR, the Philippine Data Privacy Act, NIST CSF 2.0, and NIST AI RMF
+    \item Derived \textbf{2,182} cross-framework links carrying confidence scores and written rationale, surfacing where one framework's controls already satisfy another's
+    \item Anchored every requirement to an exact offset in a fingerprinted source document, replacing an internal knowledge base whose answers could not be traced
+    \item Enforced verbatim extraction, rejecting any requirement absent from its source, and reconciled \textbf{2} independent passes to measure completeness
 \end{highlights}
 \workgap
 
@@ -215,6 +215,14 @@
     \item Cut median API requests by \textbf{15.6\%}, payload transfer by \textbf{12.9\%}, and workflow duration by \textbf{4.5\%} across repeated invoice and dashboard benchmarks
     \item Eliminated \textbf{100\%} of duplicate and failed API request groups by standardizing TanStack Query keys, caching, workspace routing, and targeted invalidation
     \item Added paginated/date-filtered transaction and posting APIs with \textbf{3} service methods and \textbf{3} unit-test suites
+\end{highlights}
+\workgap
+
+\entry{Bytespace}{San Francisco, CA (Remote)}{Product Engineer, Full-time}{May 2026 – Jul 2026}
+\begin{highlights}
+    \item Shipped \textbf{25+} Bot0 product and infrastructure changes in \textbf{6 weeks} across agents, integrations, auth, workspace flows, and customer-facing UX
+    \item Built Bot0's paid-workspace controls across workspace creation, seat limits, team invites, permission checks, and paywall enforcement
+    \item Closed \textbf{10} reliability and integration failures across OAuth, API-key auth, session timers, and external APIs
 \end{highlights}
 \workgap
 
@@ -238,12 +246,6 @@
 \projentry{Hati}{2026}{Consumer receipt-splitting product}
 \begin{highlights}
     \item Grew Hati to \textbf{237} downloads by launching hati.me, waitlist capture, and shareable KKB split links
-\end{highlights}
-\projectgap
-
-\projentry{One Big Match}{May 2025 – Dec 2025}{Full-stack matching platform}
-\begin{highlights}
-    \item Piloted matching platform across \textbf{4} org mixers and \textbf{80+} users; shipped \textbf{15+} fixes from pilot feedback
 \end{highlights}
 \projectgap
 
