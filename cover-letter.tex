@@ -3,74 +3,66 @@
 %	2027 Asia Analyst Development Program - Summer Analyst, Philippines
 %	JPMorganChase
 %
-%	Header deliberately matches cv.tex so the two read as a set.
-%	Build:  tectonic cover-letter.tex     (or: make cover)
+%	Build:  make cover     (or: tectonic cover-letter.tex)
+%	House style: no em dashes, ragged right, letter margins.
 %----------------------------------------------------------------------------------------
 \documentclass[a4paper, 11pt]{article}
 
-\usepackage{url}
 \usepackage{parskip}
 \usepackage{setspace}
 \setstretch{1.0}
 
 \RequirePackage{color}
-\RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[
     ignoreheadfoot,
-    top=1.4 cm,
-    bottom=1.0 cm,
-    left=1.6 cm,
-    right=1.6 cm,
+    top=1.7 cm,
+    bottom=1.1 cm,
+    left=2.3 cm,
+    right=2.3 cm,
     footskip=0.35 cm,
 ]{geometry}
 
-\usepackage{tabularx}
-\newcolumntype{C}{>{\centering\arraybackslash}X}
-
 \usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\definecolor{rulegrey}{gray}{0.72}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
 
-\usepackage{fontawesome5}
-
-% paragraph spacing for body copy
 \setlength{\parindent}{0pt}
-\newcommand{\para}{\vspace{0.62em}}
+\newcommand{\para}{\vspace{0.6em}}
 
 \begin{document}
 \pagestyle{empty}
+\raggedright
 
 %----------------------------------------------------------------------------------------
 %	LETTERHEAD
 %----------------------------------------------------------------------------------------
-\begin{tabularx}{\linewidth}{@{} C @{}}
-\textbf{\fontsize{18 pt}{18 pt}\selectfont Alexi Roth Luis A. Cañamo} \\
-\vspace{0.04 cm}
-\raisebox{-0.05\height}\faMapMarker\ Manila, Philippines \ $|$ \
-\href{mailto:alexicanamo@gmail.com}{\color{black}\raisebox{-0.05\height}\faEnvelope\ alexicanamo@gmail.com} \ $|$ \
-\href{tel:+639163138897}{\color{black}\raisebox{-0.05\height}\faMobile\ 0916 313 8897} \ $|$ \
-\href{https://linkedin.com/in/alexicanamo}{\color{black}\raisebox{-0.05\height}\faLinkedin\ alexicanamo} \ $|$ \
-\href{https://alexi.life}{\color{black}\raisebox{-0.05\height}\faGlobe\ alexi.life} \\
-\end{tabularx}
+{\fontsize{17pt}{17pt}\selectfont\textbf{Alexi Roth Luis A. Cañamo}}
 
-\vspace{0.5em}
-\hrule
-\vspace{1.4em}
+\vspace{0.35em}
+{\small Manila, Philippines \ \textperiodcentered\ \
+\href{mailto:alexicanamo@gmail.com}{\color{black}alexicanamo@gmail.com} \ \textperiodcentered\ \
+0916 313 8897 \ \textperiodcentered\ \
+\href{https://linkedin.com/in/alexicanamo}{\color{black}linkedin.com/in/alexicanamo}}
+
+\vspace{0.6em}
+{\color{rulegrey}\hrule height 0.6pt}
+\vspace{1.1em}
 
 %----------------------------------------------------------------------------------------
 %	ADDRESS BLOCK
 %----------------------------------------------------------------------------------------
-% TODO: update the date to the day you actually submit.
+% TODO: set this to the date you actually submit.
 18 August 2026
 \para
 
 Campus Recruiting Team \\
 JPMorganChase \\
 Taguig City, Philippines
-\para\para
+\para
 
-\textbf{Re: 2027 Asia Analyst Development Program --- Summer Analyst, Philippines}
+\textbf{Re: 2027 Asia Analyst Development Program, Summer Analyst, Philippines}
 \para\para
 
 %----------------------------------------------------------------------------------------
@@ -79,27 +71,27 @@ Taguig City, Philippines
 Dear Recruiting Team,
 \para
 
-I am applying for the 2027 Asia Analyst Development Program Summer Analyst position in the Philippines. I am a Computer Science undergraduate at Ateneo de Manila University graduating in May 2028, and for the past year I have built financial products for Philippine businesses. I would like to spend my career on the systems and operations that sit behind financial services, and a rotational program is how I would rather learn them than by choosing a specialism now.
+I am applying for the 2027 Asia Analyst Development Program Summer Analyst role in the Philippines. I study Computer Science at Ateneo de Manila University and graduate in May 2028. For the past year I have been building financial products for Philippine businesses, and the parts I care about most sit outside the code: how money moves, why a process breaks, and what a wrong number costs the person looking at it.
 \para
 
-At NextPay, a Y Combinator-backed payments company serving Philippine SMEs, I led the migration of the accounts receivable and invoicing platform across eight client-facing surfaces without interrupting live merchant workflows. I benchmarked the invoice and dashboard journeys our merchants repeat daily and cut median API calls by 15.6\% and workflow duration by 4.5\%. The result I am most pleased with, though, was eliminating a class of duplicate and failed requests that had been showing merchants inconsistent figures. In a payments product, a number that is occasionally wrong costs far more trust than one that loads slowly, and learning to tell those two problems apart has shaped how I prioritise since.
+At NextPay, a Y Combinator backed payments company serving Philippine SMEs, I led the migration of the accounts receivable and invoicing platform across eight client-facing surfaces without interrupting live merchant workflows. I benchmarked the journeys our merchants repeat every day, then cut median API calls by 15.6\%. The fix I am most pleased with was the least visible: duplicate and failed requests had been quietly showing merchants inconsistent figures, and I removed them. A number that is occasionally wrong costs far more trust than one that loads slowly.
 \para
 
-My current role at Swarm is closer to controls work. I am building a compliance engine that maps 2,711 requirements drawn from seven privacy and security frameworks --- among them GDPR, the Philippine Data Privacy Act, and NIST CSF 2.0 --- into a single cross-framework graph, with 2,182 scored links between equivalent controls so that evidence gathered once can be reused rather than collected again. Most of the work is careful reading at volume and deciding what standard of proof is good enough before anything enters the corpus.
+My current role at Swarm is closer to controls work. I am building a compliance engine that maps 2,711 requirements from seven privacy and security frameworks, among them GDPR, the Philippine Data Privacy Act, and NIST CSF 2.0, into one graph with 2,182 scored links between equivalent controls, so evidence gathered once can be reused. Most of the work is reading carefully at volume and deciding what standard of proof is good enough before anything is allowed in.
 \para
 
-Outside of work, I served as AVP for IT Skills and Development at the Ateneo Management Information Systems Association, where I ran a four-part development workshop series for over twenty students and replaced our manual event sign-in with a system that cut check-in time by 75\% across 525 members. I also build and maintain a suite of tools used by roughly 35,000 Ateneo students, which I support on my own through peak enlistment periods when any failure is visible to the entire university within minutes.
+Outside of work, I served as AVP for IT Skills and Development at the Ateneo Management Information Systems Association, where I ran a four-part workshop series for more than twenty students and replaced our manual event sign-in with a system that cut check-in time by 75\% across 525 members. I also build and maintain a set of student tools that have served roughly 35,000 users, which I run on my own through enlistment week, when anything that breaks is visible across campus in minutes.
 \para
 
-My interest in J.P. Morgan is specific to this country. The firm has operated in the Philippines since 1961, and the Global Service Centers in Manila and Cebu mean that operations, technology, and controls for the wider firm are genuinely run from here rather than merely observed from here. I would like to learn those functions where they are actually performed, and I am glad the program rotates across revenue and non-revenue divisions --- I would be comfortable being placed anywhere from front to back office.
+My interest in J.P. Morgan is specific to this country. The firm has been here since 1961, and the Global Service Centers in Manila and Cebu mean that operations, technology, and controls for the wider firm are genuinely run from the Philippines rather than only observed from it. I would rather learn those functions where the work actually happens, and I am glad the program rotates across divisions, since I would be happy to be placed anywhere from front to back office.
 \para
 
-I am a Filipino citizen and require no visa sponsorship, I speak Filipino and English, and I would be fully available for the full nine weeks. Thank you for your consideration.
-\para\para
+I would be available for the full nine weeks. Thank you for your time, and I would welcome the chance to talk further.
+\para
 
-Sincerely, \\
-\vspace{0.4em}
+Sincerely,
 
+\vspace{0.9em}
 Alexi Roth Luis A. Cañamo
 
 \end{document}
